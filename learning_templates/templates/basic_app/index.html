@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'basic_app/base.html' %}
+    {% block body_block  %}
+        <div class="jumbotron">
+            <h1>Hello! This is Index Page</h1>
+        </div>
+        <h1>{{ text }}</h1>
+        <h1>{{ text|upper }}</h1>
+        <h1>{{ text|cut:'hello' }}</h1> {% comment '' %}this is the custom filter {% endcomment %}
+        <h1>{{ number|add:'99' }}</h1>
+    {% endblock %}

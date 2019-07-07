@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'link/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'link/indexstyle.css' %}">
+     <script src="{% static 'link/jquery.js'%}"></script>
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse" role="navigation">
+	<div class="container-fluid ">
+		<div class="navbar-header">
+			<button style="background-color: transparent;" type="button" class="navbar-toggle" callapsed data-toggle='collapse' data-target='#collapse'>
+				<span class="sr-only">Toggle Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id='collapse'>
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'index' %}">Index</a></li>
+                <li><a href="{% url 'basic_app:relative' %}">Relative</a></li>
+                <li><a href="{% url 'basic_app:other' %}">Other</a></li>
+            </ul>
+			</div>
+		</div>
+</nav>
+    <div class="container-fluid">
+        {% block body_block  %}
+        {% endblock  %}
+     </div>
+    
+</body>
+</html>
